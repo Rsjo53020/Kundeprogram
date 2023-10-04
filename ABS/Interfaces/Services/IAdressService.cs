@@ -14,5 +14,6 @@ namespace ABS.Interfaces.Services
         public void UpdateAdress(Adress adress);
         public void DeleteAdress(int zipCode);
 
+
     }
 }
