@@ -21,14 +21,18 @@ namespace AllInOne
             Application.Run(ServiceProvider.GetRequiredService<Form1>());
         }
 
+
+        public static IServiceProvider ServiceProvider { get; private set; }
+
+
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-
+                    services.AddTransient<Abstractions.Interfaces.Services.ICustomerService, BusinessLogic.Services.CustomerService>();
+                    services.AddTransient<Abstractions.Interfaces.Repositories.ICustomerRepository, Repositories.MockedRepositories.CustomerMockedRepository>();
                     services.AddTransient<Form1>();
-                    services.AddTransient<Interfaces.ITimepicker, Services.TokyoTime>();
                 });
         }
     }
