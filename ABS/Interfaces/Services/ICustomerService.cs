@@ -18,7 +18,5 @@ namespace ABS.Interfaces.Services
         public void UpdateCustomer(Customer customer);
 
         public void DeleteCustomer(int id);
-
-
     }
 }
