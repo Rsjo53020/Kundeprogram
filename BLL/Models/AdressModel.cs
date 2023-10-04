@@ -8,11 +8,11 @@ namespace BLL.Models
 {
     public class AdressModel : ABS.Interfaces.Models.IAdressModel
     {
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Zipcode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string StreetName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string HouseNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string City { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Country { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
+        public string Zipcode { get; set; }
+        public string StreetName { get; set; }
+        public string HouseNumber { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
     }
 }
