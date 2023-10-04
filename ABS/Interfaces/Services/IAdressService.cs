@@ -8,6 +8,6 @@ namespace ABS.Interfaces.Services
 {
     public interface IAdressService
     {
-
+        
     }
 }
