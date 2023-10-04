@@ -9,7 +9,7 @@ namespace ABS.Interfaces.RePo
 {
     public interface ICustomerRePo
     {
-        List<Models.ICustomerModel>;
+        
         public void CreateCustomer(Models.ICustomerModel customer);
 
 
