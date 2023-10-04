@@ -34,6 +34,7 @@ namespace RePo.MockRePo
         {
             return customers.Where(x=> x.Id == ID).FirstOrDefault();
         }
+
         /// <summary>
         /// C(R)UD
         /// </summary>
@@ -59,15 +60,9 @@ namespace RePo.MockRePo
             }
             catch (Exception ex) 
             {
-                
                 return false;
-                
-                
             }
-
-            
-
-
+      
         }
 
         /// <summary>
@@ -77,7 +72,8 @@ namespace RePo.MockRePo
         /// <returns></returns>
         public bool DeleteCustomer(int ID)
         {
-            return true;
+            return customers.Remove(customers.Where(x => x.Id == ID).
+                FirstOrDefault());         
         }
     }
 }
