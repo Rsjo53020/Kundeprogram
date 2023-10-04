@@ -15,6 +15,11 @@ namespace BLL.Services
             throw new NotImplementedException();
         }
 
+        public void AddCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual void DeleteCustomer(int id)
         {
             throw new NotImplementedException();
