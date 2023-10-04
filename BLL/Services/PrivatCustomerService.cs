@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class CustomerService
+    public class PrivatCustomerService : BaseCustomerService
     {
     }
 }

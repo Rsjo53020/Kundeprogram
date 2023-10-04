@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ABS.Interfaces.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,8 @@ namespace ABS.Interfaces.Services
     {
         public void GetAllAdresses();
         public void GetAdressByZipCode(int zipCode);
-        public void AddAdress(Adress adress);
-        public void UpdateAdress(Adress adress);
+        public void AddAdress(IAdressModel adress);
+        public void UpdateAdress(IAdressModel adress);
         public void DeleteAdress(int zipCode);
     }
 }
