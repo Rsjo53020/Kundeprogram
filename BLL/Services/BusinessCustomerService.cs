@@ -8,5 +8,6 @@ namespace BLL.Services
 {
     public class BusinessCustomerService : BaseCustomerService
     {
+
     }
 }
