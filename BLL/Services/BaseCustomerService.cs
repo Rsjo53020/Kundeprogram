@@ -10,34 +10,34 @@ namespace BLL.Services
 {
     public class BaseCustomerService : ICustomerService
     {
-        public virtual void AddCustomer(ICustomerModel customer)
+        private readonly ABS.Interfaces.RePo.ICustomerRePo _customerRePo;
+
+
+        public ICustomerModel AddCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
         {
-            throw new NotImplementedException();
+            return _customerRePo.CreateCustomer(Id, FirstName, LastName, PhoneNr, Mail);
         }
 
-        public void AddCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
+        public bool DeleteCustomer(int id)
         {
-            throw new NotImplementedException();
+            return _customerRePo.DeleteCustomer(id);
         }
 
-        public virtual void DeleteCustomer(int id)
+        public List<ICustomerModel> GetAllCustomers()
         {
-            throw new NotImplementedException();
+            return _customerRePo.GetAllCustomers();
         }
 
-        public virtual void GetAllCustomers()
+        public ICustomerModel GetCustomerById(int id)
         {
-            throw new NotImplementedException();
+            return _customerRePo.GetCustomerById(id);
         }
 
-        public virtual void GetCustomerById(int id)
+        public bool UpdateCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
         {
-            throw new NotImplementedException();
+            return _customerRePo.UpdateCustomer(Id, FirstName, LastName, PhoneNr, Mail);
         }
 
-        public virtual void UpdateCustomer(ICustomerModel customer)
-        {
-            throw new NotImplementedException();
-        }
     }
+
 }

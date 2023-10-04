@@ -1,4 +1,5 @@
 using ABS.Interfaces.Models;
+using ABS.Interfaces.Services;
 using System.Windows.Forms;
 
 namespace AllInOne
@@ -16,7 +17,7 @@ namespace AllInOne
 
         private void BTN_AddCustomer_Click(object sender, EventArgs e)
         {
-            customer.AddCustomer(Convert.ToInt32(TB_id.Text), TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
+            _customerService.AddCustomer(Convert.ToInt32(TB_id.Text), TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -26,7 +27,17 @@ namespace AllInOne
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LB_INFO = _customerService.GetAllCustomers();
+
+            List<ICustomerModel> customers = _customerService.GetAllCustomers();
+
+            foreach (ICustomerModel customer in customers)
+            {
+                LB_INFO.Items.Add(customer.FirstName + " " 
+                    + customer.LastName + " " 
+                    + customer.Email + " "
+                    + customer.Id + " " 
+                    + customer.Phonenumber);
+            }
         }
 
         private void LB_INFO_SelectedIndexChanged(object sender, EventArgs e)

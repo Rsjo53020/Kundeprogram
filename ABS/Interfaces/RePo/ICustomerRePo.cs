@@ -9,18 +9,18 @@ namespace ABS.Interfaces.RePo
 {
     public interface ICustomerRePo
     {
-        
-        public void CreateCustomer(Models.ICustomerModel customer);
+
+        public Models.ICustomerModel CreateCustomer(int id, string firstname, string lastname, string phonenumber, string email);
 
 
-        public Models.ICustomerModel GetCustomer(int ID);
+        public Models.ICustomerModel GetCustomerById(int ID);
 
         public List<Models.ICustomerModel> GetAllCustomers();
 
 
-        public bool UpdateCustomer(Models.ICustomerModel customer);
+        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail);
 
 
-        public bool DeleteCustomer(int ID);
+        public bool DeleteCustomer(int Id);
     }
 }

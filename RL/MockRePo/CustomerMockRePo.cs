@@ -1,16 +1,21 @@
-﻿using ABS.Interfaces.RePo;
+﻿using ABS.Interfaces.Models;
+using ABS.Interfaces.RePo;
 using FizzWare.NBuilder;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RePo.MockRePo
 {
     public class CustomerMockRePo : ICustomerRePo
+
     {
+        private readonly List<ABS.Interfaces.Models.ICustomerModel> _customers;
+
         List<ABS.Interfaces.Models.ICustomerModel> customers =
             Builder<ABS.Interfaces.Models.ICustomerModel>
                 .CreateListOfSize(100)
@@ -21,9 +26,16 @@ namespace RePo.MockRePo
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public void CreateCustomer(ABS.Interfaces.Models.ICustomerModel customer)
+        public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
         {
-            customers.Add(customer);
+           RePo.ModelsRePo.Customer customer = new RePo.ModelsRePo.Customer();
+            customer.FirstName = firstname;
+            customer.LastName = lastname;
+            customer.Email = email;
+            customer.Phonenumber = phonenumber;
+            customer.Id = _customers.Count + 1;
+            _customers.Add((ICustomerModel)customer);
+            return (ICustomerModel)customer;
         }
 
         /// <summary>
@@ -75,6 +87,11 @@ namespace RePo.MockRePo
         {
             return customers.Remove(customers.Where(x => x.Id == ID).
                 First());         
+        }
+
+        public void CreateCustomer(ICustomerModel customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

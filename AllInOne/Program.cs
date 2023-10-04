@@ -5,7 +5,7 @@ using System;
 
 namespace AllInOne
 {
-    internal static class Program
+    public static class Program
     {
         public static IServiceProvider? ServiceProvider { get; private set; }
 
@@ -36,7 +36,7 @@ namespace AllInOne
                 .ConfigureServices((context, services) =>
                 {
                     services.AddTransient<ABS.Interfaces.Services.ICustomerService, BLL.Services.BaseCustomerService>();
-                    services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo>();
+                    services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.MockRePo.CustomerMockRePo>();
                     services.AddTransient<Form1>();
                 });
         }
