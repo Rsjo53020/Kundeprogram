@@ -10,5 +10,15 @@ namespace ABS.Interfaces.Services
     public interface ICustomerService
     {
         public void GetAllCustomers();
+
+        public void GetCustomerById(int id);
+
+        public void AddCustomer(Customer customer);
+
+        public void UpdateCustomer(Customer customer);
+
+        public void DeleteCustomer(int id);
+
+
     }
 }
