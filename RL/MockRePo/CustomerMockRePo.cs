@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RePo.MockRePo
 {
-    public class CustomerMockRePo
+    public class CustomerMockRePo : 
     {
         List<ABS.Interfaces.Models.ICustomerModel> customers =
             Builder<ABS.Interfaces.Models.ICustomerModel>
