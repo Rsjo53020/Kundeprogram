@@ -13,7 +13,8 @@ namespace ABS.Interfaces.Services
 
         public void GetCustomerById(int id);
 
-        public void AddCustomer(ICustomerModel customer);
+        public void AddCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail);
+        
 
         public void UpdateCustomer(ICustomerModel customer);
 
