@@ -149,6 +149,7 @@
             LB_INFO.Name = "LB_INFO";
             LB_INFO.Size = new Size(687, 804);
             LB_INFO.TabIndex = 11;
+            LB_INFO.SelectedIndexChanged += LB_INFO_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -216,6 +217,7 @@
             Controls.Add(BTN_AddCustomer);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
