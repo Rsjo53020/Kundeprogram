@@ -17,7 +17,7 @@ namespace RePo.MockRePo
         /// <param name="customer"></param>
         public void CreateCustomer(ABS.Interfaces.Models.ICustomerModel customer)
         {
-
+            customers.Add(customer);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace RePo.MockRePo
         /// <returns></returns>
         public ABS.Interfaces.Models.ICustomerModel GetCustomer(int ID)
         {
-            return null;
+            return customers.where;
         }
         /// <summary>
         /// C(R)UD
