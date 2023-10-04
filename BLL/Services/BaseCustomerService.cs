@@ -25,7 +25,7 @@ namespace BLL.Services
             throw new NotImplementedException();
         }
 
-        public virtual void GetAllCustomers()
+        public virtual List<ICustomerModel> GetAllCustomers()
         {
             throw new NotImplementedException();
         }

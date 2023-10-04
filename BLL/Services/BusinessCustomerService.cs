@@ -19,7 +19,11 @@ namespace BLL.Services
             throw new NotImplementedException();
         }
 
-        public override void GetAllCustomers()
+        public override List<ICustomerModel> GetAllCustomers()
+        {
+            return base.GetAllCustomers();
+        }
+
         {
             throw new NotImplementedException();
         }
