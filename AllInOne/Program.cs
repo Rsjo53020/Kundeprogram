@@ -1,4 +1,6 @@
 using FizzWare.NBuilder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
 
 namespace AllInOne
@@ -25,7 +27,7 @@ namespace AllInOne
         }
 
 
-        public static IServiceProvider ServiceProvider { get; private set; }
+        public static IServiceProvider ServiceProviders { get; private set; }
 
 
         static IHostBuilder CreateHostBuilder()
@@ -33,8 +35,8 @@ namespace AllInOne
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddTransient<Abstractions.Interfaces.Services.ICustomerService, BusinessLogic.Services.CustomerService>();
-                    services.AddTransient<Abstractions.Interfaces.Repositories.ICustomerRepository, Repositories.MockedRepositories.CustomerMockedRepository>();
+                    services.AddTransient<ABS.Interfaces.Services.ICustomerService, BLL.Services.BaseCustomerService>();
+                    services.AddTransient<RePo.MockRePo.CustomerMockRePo>();
                     services.AddTransient<Form1>();
                 });
         }
