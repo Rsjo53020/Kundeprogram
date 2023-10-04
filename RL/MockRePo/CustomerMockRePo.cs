@@ -1,4 +1,5 @@
-﻿using FizzWare.NBuilder;
+﻿using ABS.Interfaces.RePo;
+using FizzWare.NBuilder;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RePo.MockRePo
 {
-    public class CustomerMockRePo : 
+    public class CustomerMockRePo : ICustomerRePo
     {
         List<ABS.Interfaces.Models.ICustomerModel> customers =
             Builder<ABS.Interfaces.Models.ICustomerModel>
