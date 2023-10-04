@@ -36,7 +36,7 @@ namespace AllInOne
                 .ConfigureServices((context, services) =>
                 {
                     services.AddTransient<ABS.Interfaces.Services.ICustomerService, BLL.Services.BaseCustomerService>();
-                    services.AddTransient<RePo.MockRePo.CustomerMockRePo>();
+                    services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo>();
                     services.AddTransient<Form1>();
                 });
         }

@@ -4,7 +4,7 @@ namespace AllInOne
 {
     public partial class Form1 : Form
     {
-        ABS.Interfaces.Services.ICustomerService customer; 
+         
         public Form1()
         {
             InitializeComponent();
