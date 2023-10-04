@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FizzWare.NBuilder;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +11,10 @@ namespace RePo.MockRePo
     public class CustomerMockRePo
     {
         List<ABS.Interfaces.Models.ICustomerModel> customers =
-            new List<ABS.Interfaces.Models.ICustomerModel>();
+            Builder<ABS.Interfaces.Models.ICustomerModel>
+                .CreateListOfSize(100)
+                .Build()
+                .ToList();
 
         /// <summary>
         /// (C)RUD
@@ -27,7 +32,7 @@ namespace RePo.MockRePo
         /// <returns></returns>
         public ABS.Interfaces.Models.ICustomerModel GetCustomer(int ID)
         {
-            return customers.where;
+            return customers.Where(x=> x.Id == ID).FirstOrDefault();
         }
         /// <summary>
         /// C(R)UD
@@ -44,8 +49,24 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public void UpdateCustomer(int ID)
+        public bool UpdateCustomer(ABS.Interfaces.Models.ICustomerModel customer)
         {
+            try
+            {
+                customers[customers.IndexOf(customers.Where(x => x.Id == customer.Id).
+                FirstOrDefault())] = customer;
+                return true;
+            }
+            catch (Exception ex) 
+            {
+                
+                return false;
+                
+                
+            }
+
+            
+
 
         }
 
