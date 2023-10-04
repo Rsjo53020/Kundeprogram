@@ -72,15 +72,7 @@ namespace RePo.MockRePo
         /// <returns></returns>
         public bool DeleteCustomer(int ID)
         {
-            var customerToRemove = customers.FirstOrDefault(x => x.Id == ID);
-
-            if (customerToRemove != null)
-            {
-                customers.Remove(customerToRemove);
-                return true;
-            }
-
-            return false;
+           
         }
     }
 }
