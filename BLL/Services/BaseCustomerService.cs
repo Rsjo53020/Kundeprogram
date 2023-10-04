@@ -10,27 +10,27 @@ namespace BLL.Services
 {
     public class BaseCustomerService : ICustomerService
     {
-        public void AddCustomer(ICustomerModel customer)
+        public virtual void AddCustomer(ICustomerModel customer)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteCustomer(int id)
+        public virtual void DeleteCustomer(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void GetAllCustomers()
+        public virtual void GetAllCustomers()
         {
             throw new NotImplementedException();
         }
 
-        public void GetCustomerById(int id)
+        public virtual void GetCustomerById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateCustomer(ICustomerModel customer)
+        public virtual void UpdateCustomer(ICustomerModel customer)
         {
             throw new NotImplementedException();
         }
