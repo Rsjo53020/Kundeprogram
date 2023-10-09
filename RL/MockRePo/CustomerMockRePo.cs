@@ -27,7 +27,7 @@ namespace RePo.MockRePo
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public ICustomerModel CreateCustomer(int id, string firstname, string lastname, string phonenumber, string email)
+        public ICustomerModel CreateCustomer( string firstname, string lastname, string phonenumber, string email)
         {
             RePo.ModelsRePo.Customer customer = new RePo.ModelsRePo.Customer();
             customer.FirstName = firstname;
@@ -45,7 +45,7 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public ABS.Interfaces.Models.ICustomerModel GetCustomer(int ID)
+        public ABS.Interfaces.Models.ICustomerModel GetCustomerById(int ID)
         {
             return customers.Where(x => x.Id == ID).FirstOrDefault();
         }
@@ -92,13 +92,6 @@ namespace RePo.MockRePo
             return customers.Remove(customers.Where(x => x.Id == ID).
                 First());
         }
-
-
-        public ICustomerModel GetCustomerById(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
 
     }
 }
