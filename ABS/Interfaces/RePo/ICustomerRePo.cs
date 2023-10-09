@@ -10,7 +10,7 @@ namespace ABS.Interfaces.RePo
     public interface ICustomerRePo
     {
 
-        public Models.ICustomerModel CreateCustomer(int id, string firstname, string lastname, string phonenumber, string email);
+        public Models.ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email);
 
 
         public Models.ICustomerModel GetCustomerById(int ID);
@@ -18,7 +18,7 @@ namespace ABS.Interfaces.RePo
         public List<Models.ICustomerModel> GetAllCustomers();
 
 
-        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail);
+        public bool UpdateCustomer(string firstname, string lastname, string phonenumber, string mail);
 
 
         public bool DeleteCustomer(int Id);
