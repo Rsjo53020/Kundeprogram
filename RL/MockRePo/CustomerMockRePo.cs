@@ -89,8 +89,18 @@ namespace RePo.MockRePo
         /// <returns></returns>
         public bool DeleteCustomer(int ID)
         {
-            return customers.Remove(customers.Where(x => x.Id == ID).
-                First());
+            try
+            {
+                var DeletedCustomer = customers.Remove(customers.Where(x => x.Id == ID).FirstOrDefault());
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
         }
 
     }
