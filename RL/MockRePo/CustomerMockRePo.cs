@@ -66,7 +66,7 @@ namespace RePo.MockRePo
         /// <param name="ID"></param>
         /// <returns></returns>
 
-        public bool UpdateCustomer(string firstname, string lastname, string phonenumber, string mail)
+        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail)
         {
             try
             {
