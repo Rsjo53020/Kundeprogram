@@ -10,7 +10,7 @@ namespace ABS.Interfaces.Services
     public interface IAdressService
     {
         public List<IAdressModel> GetAllAdresses();
-        public GetCustomerAdress(ICustomerModel customer);
+        public void GetCustomerAdress(ICustomerModel customer);
         public void GetAdressByZipCode(int zipCode);
         public void AddAdress(IAdressModel adress);
         public void UpdateAdress(IAdressModel adress);

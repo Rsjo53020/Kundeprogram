@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class BaseCustomerService : ICustomerService
+    public abstract class BaseCustomerService : ICustomerService
     {
         private readonly ABS.Interfaces.RePo.ICustomerRePo _customerRePo;
 
@@ -29,9 +29,11 @@ namespace BLL.Services
         }
 
         public ICustomerModel GetCustomerById(int id)
-        {
-            return _customerRePo.GetCustomerById(id);
+        { 
+
         }
+
+
 
         public bool UpdateCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
         {

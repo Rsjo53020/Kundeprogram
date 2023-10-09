@@ -9,11 +9,6 @@ namespace BLL.Services
 {
     public class AdressService : ABS.Interfaces.Services.IAdressService
     {
-        public void GetCustomerAdress(ICustomerModel customer)
-        {
-            throw new NotImplementedException();
-        }
-        
         public void AddAdress(IAdressModel adress)
         {
             throw new NotImplementedException();
@@ -29,7 +24,12 @@ namespace BLL.Services
             throw new NotImplementedException();
         }
 
-        public void GetAllAdresses(IAdressModel adress)
+        public List<IAdressModel> GetAllAdresses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetCustomerAdress(ICustomerModel customer)
         {
             throw new NotImplementedException();
         }

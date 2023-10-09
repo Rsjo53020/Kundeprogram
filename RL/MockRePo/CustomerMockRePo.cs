@@ -1,6 +1,7 @@
 ﻿using ABS.Interfaces.Models;
 using ABS.Interfaces.RePo;
 using FizzWare.NBuilder;
+using RePo.ModelsRePo;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,9 +27,9 @@ namespace RePo.MockRePo
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
+        public ICustomerModel CreateCustomer(int id, string firstname, string lastname, string phonenumber, string email)
         {
-           RePo.ModelsRePo.Customer customer = new RePo.ModelsRePo.Customer();
+            RePo.ModelsRePo.Customer customer = new RePo.ModelsRePo.Customer();
             customer.FirstName = firstname;
             customer.LastName = lastname;
             customer.Email = email;
@@ -38,6 +39,7 @@ namespace RePo.MockRePo
             return (ICustomerModel)customer;
         }
 
+
         /// <summary>
         /// C(R)UD
         /// </summary>
@@ -45,7 +47,7 @@ namespace RePo.MockRePo
         /// <returns></returns>
         public ABS.Interfaces.Models.ICustomerModel GetCustomer(int ID)
         {
-            return customers.Where(x=> x.Id == ID).FirstOrDefault();
+            return customers.Where(x => x.Id == ID).FirstOrDefault();
         }
 
         /// <summary>
@@ -63,20 +65,22 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public bool UpdateCustomer(ABS.Interfaces.Models.ICustomerModel customer)
+
+        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail)
         {
             try
             {
-                customers[customers.IndexOf(customers.Where(x => x.Id == customer.Id).
-                FirstOrDefault())] = customer;
+                var NewCustomer = customers.IndexOf(customers.Where(_x => _x.Id == id).FirstOrDefault());
+
+
                 return true;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return false;
             }
-      
         }
+
 
         /// <summary>
         /// CRU(D)
@@ -86,12 +90,15 @@ namespace RePo.MockRePo
         public bool DeleteCustomer(int ID)
         {
             return customers.Remove(customers.Where(x => x.Id == ID).
-                First());         
+                First());
         }
 
-        public void CreateCustomer(ICustomerModel customer)
+
+        public ICustomerModel GetCustomerById(int ID)
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
