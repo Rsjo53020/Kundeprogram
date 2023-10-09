@@ -18,7 +18,7 @@ namespace ABS.Interfaces.RePo
         public List<Models.ICustomerModel> GetAllCustomers();
 
 
-        public bool UpdateCustomer(string firstname, string lastname, string phonenumber, string mail);
+        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail);
 
 
         public bool DeleteCustomer(int Id);
