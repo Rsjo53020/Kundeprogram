@@ -13,9 +13,9 @@ namespace BLL.Services
         private readonly ABS.Interfaces.RePo.ICustomerRePo _customerRePo;
 
 
-        public ICustomerModel AddCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
+        public ICustomerModel AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail)
         {
-            return _customerRePo.CreateCustomer(Id, FirstName, LastName, PhoneNr, Mail);
+            return _customerRePo.CreateCustomer(FirstName, LastName, PhoneNr, Mail);
         }
 
         public bool DeleteCustomer(int id)
@@ -30,7 +30,7 @@ namespace BLL.Services
 
         public ICustomerModel GetCustomerById(int id)
         { 
-
+            return _customerRePo.GetCustomerById(id);
         }
 
 

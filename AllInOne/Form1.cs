@@ -17,7 +17,7 @@ namespace AllInOne
 
         private void BTN_AddCustomer_Click(object sender, EventArgs e)
         {
-            _customerService.AddCustomer(Convert.ToInt32(TB_id.Text), TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
+            _customerService.AddCustomer(TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

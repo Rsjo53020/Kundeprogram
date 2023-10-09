@@ -27,7 +27,7 @@ namespace RePo.MockRePo
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public ICustomerModel CreateCustomer( string firstname, string lastname, string phonenumber, string email)
+        public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
         {
             RePo.ModelsRePo.Customer customer = new RePo.ModelsRePo.Customer();
             customer.FirstName = firstname;
@@ -70,10 +70,21 @@ namespace RePo.MockRePo
         {
             try
             {
-                var NewCustomer = customers.IndexOf(customers.Where(_x => _x.Id == id).FirstOrDefault());
+                int indexOfCustomer = customers.IndexOf(customers.Where(_x => _x.Id == id).FirstOrDefault());
 
+                if (indexOfCustomer != null)
+                {
+                    customers[indexOfCustomer].FirstName = firstname;
+                    customers[indexOfCustomer].LastName = lastname;
+                    customers[indexOfCustomer].Phonenumber = phonenumber;
+                    customers[indexOfCustomer].Email = mail;
+                    return true;
+                }
 
-                return true;
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {
