@@ -10,8 +10,7 @@ namespace RePo.DBRePo
 {
     public class CustomerDBRepoContext : DbContext 
     {
-        OptionsBuilder.UseSplSer
-
+        
         //optionsBuilder.UseSqlServer("");
 
         //add-migration sigendeting
