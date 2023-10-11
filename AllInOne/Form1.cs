@@ -1,6 +1,8 @@
 using ABS.Interfaces.Models;
 using ABS.Interfaces.Services;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using RePo.ModelsRePo;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace AllInOne
@@ -8,17 +10,23 @@ namespace AllInOne
     public partial class Form1 : Form
     {
         private readonly ABS.Interfaces.Services.ICustomerService _customerService;
+        List<ABS.Interfaces.Models.ICustomerModel> _customers;
         public Form1(ABS.Interfaces.Services.ICustomerService customerService)
         {
             InitializeComponent();
             _customerService = customerService;
         }
 
-
+        public void UpdateDataGridView()
+        {
+            BindingList<ABS.Interfaces.Models.ICustomerModel> customerModels = new BindingList<ICustomerModel>(_customers);
+            dataGridView1.DataSource = customerModels;
+        }
 
         private void BTN_AddCustomer_Click(object sender, EventArgs e)
         {
             _customerService.AddCustomer(TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
+            Form1_Load(sender, e);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -29,9 +37,9 @@ namespace AllInOne
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            List<ICustomerModel> customers = _customerService.GetAllCustomers();
+            _customers = _customerService.GetAllCustomers();
 
-            foreach (ICustomerModel customer in customers)
+            foreach (ICustomerModel customer in _customers)
             {
                 LB_INFO.Items.Add(customer.FirstName + " "
                     + customer.LastName + " "
@@ -39,8 +47,7 @@ namespace AllInOne
                     + customer.Id + " "
                     + customer.Phonenumber);
             }
-
-            dataGridView1.DataSource = _customerService.GetAllCustomers();
+            UpdateDataGridView();
         }
 
         private void LB_INFO_SelectedIndexChanged(object sender, EventArgs e)

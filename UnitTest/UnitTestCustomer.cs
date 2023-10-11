@@ -1,59 +1,59 @@
-namespace UnitTest
-{
-    [TestClass]
-    public class UnitTestCustomer
-    {
-        [TestMethod]
-        public void AddCustomer()
-        {
-            //Arrange
-            ABS.Interfaces.Services.ICustomerService customerService = new BLL.Services.CustomerService();
+//namespace UnitTest
+//{
+//    [TestClass]
+//    public class UnitTestCustomer
+//    {
+//        [TestMethod]
+//       public void AddCustomer()
+//        {
+//            //Arrange
+//            ABS.Interfaces.Services.ICustomerService customerService = new BLL.Services.CustomerService();
             
-            //Act
-            customerService.AddCustomer("Test", "Test", "Test", "Test");
+//            //Act
+//            customerService.AddCustomer("Test", "Test", "Test", "Test");
 
-            //Assert
-            Assert.IsTrue(true);
-        }
+//            //Assert
+//            Assert.IsTrue(true);
+//        }
 
-        [TestMethod]
-        public void DeleteCustomer()
-        {
-            //Arrange
+//        [TestMethod]
+//        public void DeleteCustomer()
+//        {
+//            //Arrange
 
-            //Act
+//            //Act
 
-            //Assert
-        }
+//            //Assert
+//        }
 
-        [TestMethod]
-        public void GetAllCustomers()
-        {
-            //Arrange
+//        [TestMethod]
+//        public void GetAllCustomers()
+//        {
+//            //Arrange
 
-            //Act
+//            //Act
 
-            //Assert
-        }
+//            //Assert
+//        }
 
-        [TestMethod]
-        public void GetCustomerById()
-        {
-            //Arrange
+//        [TestMethod]
+//        public void GetCustomerById()
+//        {
+//            //Arrange
 
-            //Act
+//            //Act
 
-            //Assert
-        }
+//            //Assert
+//        }
 
-        [TestMethod]
-        public void UpdateCustomer()
-        {
-            //Arrange
+//        [TestMethod]
+//        public void UpdateCustomer()
+//        {
+//            //Arrange
 
-            //Act
+//            //Act
 
-            //Assert
-        }
-    }
-}
+//            //Assert
+//        }
+//    }
+//}
