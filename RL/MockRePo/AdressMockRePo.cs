@@ -8,9 +8,6 @@ namespace RePo.MockRePo
 {
     public class AdressMockRePo
     {
-        
-
-
 
     }
 }
