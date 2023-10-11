@@ -1,7 +1,7 @@
 namespace UnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestCustomer
     {
         [TestMethod]
         public void TestMethod1()
@@ -12,5 +12,8 @@ namespace UnitTest
 
             //Assert
         }
+
+        [TestMethod]
+        public void 
     }
 }
