@@ -77,24 +77,36 @@ namespace AllInOne
 
         private void BTN_ShowOneCustomer_Click(object sender, EventArgs e)
         {
-            _customerService.GetCustomerById(int.Parse(TB_id.Text));
-
+            var Customer = _customerService.GetCustomerById(int.Parse(TB_id.Text));
+            TB_FirstName.Text = Customer.FirstName;
+            TB_LastName.Text = Customer.LastName;
+            TB_Mail.Text = Customer.Email;
+            TB_PhoneNr.Text = Customer.Phonenumber;
         }
 
         private void BTN_ShowAllCustomer_Click(object sender, EventArgs e)
         {
-            _customerService.GetAllCustomers();
-
+            Form1_Load(sender, e);
         }
 
         private void BTN_UpdateCustome_Click(object sender, EventArgs e)
         {
+            _customerService.UpdateCustomer(int.Parse(TB_id.Text), TB_FirstName.Text, TB_LastName.Text, TB_Mail.Text, TB_PhoneNr.Text);
+            Form1_Load(sender, e);
+        }
 
-            _customerService.UpdateCustomer(int.Parse(TB_id.Text), TB_id.Text, TB_LastName.Text, TB_Mail.Text, TB_PhoneNr.Text);
-
-            _customerService.GetAllCustomers();
-
-
+        private void BTN_DeletedCustome_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Vil du slette Kunde?" , "Advarsel", MessageBoxButtons.YesNo);
+            if (answer == DialogResult.Yes)
+            {
+                _customerService.DeleteCustomer(int.Parse(TB_id.Text));
+                Form1_Load(sender, e);
+            }
+            else
+            {
+                
+            }
         }
     }
 }

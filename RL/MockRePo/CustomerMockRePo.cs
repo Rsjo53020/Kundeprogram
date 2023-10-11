@@ -104,7 +104,7 @@ namespace RePo.MockRePo
             {
                 int indexOfCustomer = _customers.IndexOf(_customers.FirstOrDefault(x => x.Id == ID));
 
-                if (indexOfCustomer! > 0)
+                if (indexOfCustomer >= 0)
                 {
                     _customers[indexOfCustomer].FirstName = firstname;
                     _customers[indexOfCustomer].LastName = lastname;
