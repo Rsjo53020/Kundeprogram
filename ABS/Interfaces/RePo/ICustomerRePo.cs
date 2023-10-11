@@ -12,7 +12,7 @@ namespace ABS.Interfaces.RePo
     {
 
 
-        public Models.ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email);
+        public bool CreateCustomer(string firstname, string lastname, string phonenumber, string email);
 
 
         public Models.ICustomerModel GetCustomerById(int ID);

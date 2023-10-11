@@ -161,7 +161,7 @@
             LB_INFO.ItemHeight = 32;
             LB_INFO.Location = new Point(802, 58);
             LB_INFO.Name = "LB_INFO";
-            LB_INFO.Size = new Size(732, 132);
+            LB_INFO.Size = new Size(1162, 132);
             LB_INFO.TabIndex = 11;
             LB_INFO.SelectedIndexChanged += LB_INFO_SelectedIndexChanged;
             // 
@@ -220,7 +220,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.RowTemplate.Height = 41;
-            dataGridView1.Size = new Size(926, 681);
+            dataGridView1.Size = new Size(1346, 681);
             dataGridView1.TabIndex = 17;
             // 
             // idDataGridViewTextBoxColumn
@@ -285,7 +285,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1556, 907);
+            ClientSize = new Size(2209, 907);
             Controls.Add(dataGridView1);
             Controls.Add(TB_Mail);
             Controls.Add(label6);
