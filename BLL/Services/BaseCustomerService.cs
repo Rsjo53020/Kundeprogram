@@ -20,7 +20,7 @@ namespace BLL.Services
         }
 
 
-        public ICustomerModel AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail)
+        public bool AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail)
         {
             return _customerRePo.CreateCustomer(FirstName, LastName, PhoneNr, Mail);
         }
