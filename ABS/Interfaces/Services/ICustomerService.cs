@@ -13,7 +13,7 @@ namespace ABS.Interfaces.Services
 
         public Models.ICustomerModel GetCustomerById(int id);
 
-        public Models.ICustomerModel AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail);
+        public bool AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail);
         
 
         public bool UpdateCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail);
