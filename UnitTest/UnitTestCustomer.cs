@@ -13,7 +13,7 @@ namespace UnitTest
             customerService.AddCustomer("Test", "Test", "Test", "Test");
 
             //Assert
-            return true;
+            Assert.IsTrue(true);
         }
 
         [TestMethod]
