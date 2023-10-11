@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DBRePo\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NBuilder" Version="6.1.0" />
   </ItemGroup>
 
