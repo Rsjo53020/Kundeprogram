@@ -1,4 +1,5 @@
 ﻿using ABS.Interfaces.Models;
+using ABS.Interfaces.RePo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace BLL.Services
 {
     public class PrivatCustomerService : BaseCustomerService
     {
-
+        public PrivatCustomerService(ICustomerRePo customerRePo) : base(customerRePo)
+        {
+        }
     }
 }

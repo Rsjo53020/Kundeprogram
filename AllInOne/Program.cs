@@ -1,11 +1,14 @@
+using ABS.Interfaces.Services;
+using BLL.Services;
 using FizzWare.NBuilder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RePo.MockRePo;
 using System;
 
 namespace AllInOne
 {
-    public static class Program
+    internal static class Program
     {
         public static IServiceProvider? ServiceProvider { get; private set; }
 
@@ -15,6 +18,7 @@ namespace AllInOne
         [STAThread]
         static void Main()
         {
+
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
@@ -27,15 +31,13 @@ namespace AllInOne
         }
 
 
-        public static IServiceProvider ServiceProviders { get; private set; }
-
-
         static IHostBuilder CreateHostBuilder()
         {
+
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddTransient<ABS.Interfaces.Services.ICustomerService, BLL.Services.BaseCustomerService>();
+                    services.AddTransient<ABS.Interfaces.Services.ICustomerService,BLL.Services.PrivatCustomerService>(); // Replace with actual implementation
                     services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.MockRePo.CustomerMockRePo>();
                     services.AddTransient<Form1>();
                 });

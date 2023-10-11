@@ -13,6 +13,13 @@ namespace BLL.Services
         private readonly ABS.Interfaces.RePo.ICustomerRePo _customerRePo;
 
 
+        public BaseCustomerService(ABS.Interfaces.RePo.ICustomerRePo customerRePo)
+        {
+            _customerRePo = customerRePo;
+
+        }
+
+
         public ICustomerModel AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail)
         {
             return _customerRePo.CreateCustomer(FirstName, LastName, PhoneNr, Mail);

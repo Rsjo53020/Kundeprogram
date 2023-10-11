@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace ABS.Interfaces.RePo
 {
+
     public interface ICustomerRePo
     {
+
 
         public Models.ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email);
 

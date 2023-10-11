@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             BTN_AddCustomer = new Button();
             BTN_ShowOneCustomer = new Button();
             BTN_ShowAllCustomer = new Button();
@@ -45,6 +46,16 @@
             label5 = new Label();
             TB_Mail = new TextBox();
             label6 = new Label();
+            dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            phonenumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            adressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            customerBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerBindingSource).BeginInit();
             SuspendLayout();
             // 
             // BTN_AddCustomer
@@ -65,6 +76,7 @@
             BTN_ShowOneCustomer.TabIndex = 1;
             BTN_ShowOneCustomer.Text = "Vis Kunde";
             BTN_ShowOneCustomer.UseVisualStyleBackColor = true;
+            BTN_ShowOneCustomer.Click += BTN_ShowOneCustomer_Click;
             // 
             // BTN_ShowAllCustomer
             // 
@@ -74,6 +86,7 @@
             BTN_ShowAllCustomer.TabIndex = 2;
             BTN_ShowAllCustomer.Text = "Vis Alle Kunder";
             BTN_ShowAllCustomer.UseVisualStyleBackColor = true;
+            BTN_ShowAllCustomer.Click += BTN_ShowAllCustomer_Click;
             // 
             // BTN_UpdateCustome
             // 
@@ -83,6 +96,7 @@
             BTN_UpdateCustome.TabIndex = 3;
             BTN_UpdateCustome.Text = "Opdater Kunde";
             BTN_UpdateCustome.UseVisualStyleBackColor = true;
+            BTN_UpdateCustome.Click += BTN_UpdateCustome_Click;
             // 
             // BTN_DeletedCustome
             // 
@@ -147,7 +161,7 @@
             LB_INFO.ItemHeight = 32;
             LB_INFO.Location = new Point(802, 58);
             LB_INFO.Name = "LB_INFO";
-            LB_INFO.Size = new Size(687, 804);
+            LB_INFO.Size = new Size(732, 132);
             LB_INFO.TabIndex = 11;
             LB_INFO.SelectedIndexChanged += LB_INFO_SelectedIndexChanged;
             // 
@@ -193,11 +207,86 @@
             label6.TabIndex = 15;
             label6.Text = "Mail:";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, phonenumberDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, adressDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = customerBindingSource;
+            dataGridView1.Location = new Point(618, 214);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.RowTemplate.Height = 41;
+            dataGridView1.Size = new Size(926, 681);
+            dataGridView1.TabIndex = 17;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 10;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            firstNameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            firstNameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            lastNameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            lastNameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // phonenumberDataGridViewTextBoxColumn
+            // 
+            phonenumberDataGridViewTextBoxColumn.DataPropertyName = "Phonenumber";
+            phonenumberDataGridViewTextBoxColumn.HeaderText = "Phonenumber";
+            phonenumberDataGridViewTextBoxColumn.MinimumWidth = 10;
+            phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
+            phonenumberDataGridViewTextBoxColumn.ReadOnly = true;
+            phonenumberDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            emailDataGridViewTextBoxColumn.MinimumWidth = 10;
+            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.ReadOnly = true;
+            emailDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            adressDataGridViewTextBoxColumn.MinimumWidth = 10;
+            adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            adressDataGridViewTextBoxColumn.ReadOnly = true;
+            adressDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // customerBindingSource
+            // 
+            customerBindingSource.DataSource = typeof(RePo.ModelsRePo.Customer);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1556, 907);
+            Controls.Add(dataGridView1);
             Controls.Add(TB_Mail);
             Controls.Add(label6);
             Controls.Add(TB_LastName);
@@ -218,6 +307,8 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)customerBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,5 +332,13 @@
         private Label label5;
         private TextBox TB_Mail;
         private Label label6;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phonenumberDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
+        private BindingSource customerBindingSource;
     }
 }

@@ -12,32 +12,32 @@ using System.Threading.Tasks;
 
 namespace RePo.MockRePo
 {
-    public class CustomerMockRePo : ICustomerRePo
+    public class CustomerMockRePo : ABS.Interfaces.RePo.ICustomerRePo
 
     {
         private readonly List<ABS.Interfaces.Models.ICustomerModel> _customers;
+        public CustomerMockRePo()
+        {
+            //_customers =
+            //Builder<ABS.Interfaces.Models.ICustomerModel>
+            //    .CreateListOfSize(10)
+            //    .Build()
+            //    .ToList();
 
-        List<ABS.Interfaces.Models.ICustomerModel> customers =
-            Builder<ABS.Interfaces.Models.ICustomerModel>
-                .CreateListOfSize(100)
-                .Build()
-                .ToList();
+            _customers = new List<ICustomerModel>();
+
+            _customers.Add(new ModelsRePo.Customer() { FirstName = "Ronni", LastName = "Jørgensen", Email = "RJ@ucl.dk", Phonenumber = "10203040", Id = 1 });
+            _customers.Add(new ModelsRePo.Customer() { FirstName = "Christoffer", LastName = "Skaft", Email = "CS@ucl.dk", Phonenumber = "20203040", Id = 2 });
+            _customers.Add(new ModelsRePo.Customer() { FirstName = "Alex", LastName = "Handsome", Email = "AH@ucl.dk", Phonenumber = "30203040", Id = 3 });
+        }
+
+
+
 
         /// <summary>
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
-        {
-            RePo.ModelsRePo.Customer customer = new RePo.ModelsRePo.Customer();
-            customer.FirstName = firstname;
-            customer.LastName = lastname;
-            customer.Email = email;
-            customer.Phonenumber = phonenumber;
-            customer.Id = _customers.Count + 1;
-            _customers.Add((ICustomerModel)customer);
-            return (ICustomerModel)customer;
-        }
 
 
         /// <summary>
@@ -45,20 +45,14 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public ABS.Interfaces.Models.ICustomerModel GetCustomerById(int ID)
-        {
-            return customers.Where(x => x.Id == ID).FirstOrDefault();
-        }
+
 
         /// <summary>
         /// C(R)UD
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public List<ABS.Interfaces.Models.ICustomerModel> GetAllCustomers()
-        {
-            return customers;
-        }
+
 
         /// <summary>
         /// CR(U)D
@@ -66,18 +60,69 @@ namespace RePo.MockRePo
         /// <param name="ID"></param>
         /// <returns></returns>
 
-        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail)
+
+        /// <summary>
+        /// CRU(D)
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+
+
+        public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
+        {
+            ModelsRePo.Customer customer = new ModelsRePo.Customer();
+            customer.FirstName = firstname;
+            customer.LastName = lastname;
+            customer.Email = email;
+            customer.Phonenumber = phonenumber;
+            customer.Id = _customers.Count + 1;
+            _customers.Add(customer);
+            return customer;
+        }
+
+        public bool DeleteCustomer(int ID)
         {
             try
             {
-                int indexOfCustomer = customers.IndexOf(customers.Where(_x => _x.Id == id).FirstOrDefault());
-
-                if (indexOfCustomer != null)
+                var DeletedACustomer = _customers.FirstOrDefault(x => x.Id == ID);
+                if (DeletedACustomer != null)
                 {
-                    customers[indexOfCustomer].FirstName = firstname;
-                    customers[indexOfCustomer].LastName = lastname;
-                    customers[indexOfCustomer].Phonenumber = phonenumber;
-                    customers[indexOfCustomer].Email = mail;
+                    _customers.Remove(DeletedACustomer);
+                    return true;
+                }
+                return false;
+
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public List<ICustomerModel> GetAllCustomers()
+        {
+            return _customers;
+
+        }
+
+        public ICustomerModel GetCustomerById(int ID)
+        {
+            return _customers.FirstOrDefault(x => x.Id == ID);
+        }
+
+        public bool UpdateCustomer(int ID, string firstname, string lastname, string phonenumber, string mail)
+        {
+            try
+            {
+                int indexOfCustomer = _customers.IndexOf(_customers.FirstOrDefault(x => x.Id == ID));
+
+                if (indexOfCustomer! > 0)
+                {
+                    _customers[indexOfCustomer].FirstName = firstname;
+                    _customers[indexOfCustomer].LastName = lastname;
+                    _customers[indexOfCustomer].Phonenumber = phonenumber;
+                    _customers[indexOfCustomer].Email = mail;
                     return true;
                 }
 
@@ -91,28 +136,5 @@ namespace RePo.MockRePo
                 return false;
             }
         }
-
-
-        /// <summary>
-        /// CRU(D)
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
-        public bool DeleteCustomer(int ID)
-        {
-            try
-            {
-                var DeletedCustomer = customers.Remove(customers.Where(x => x.Id == ID).FirstOrDefault());
-
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-            
-        }
-
     }
 }

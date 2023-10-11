@@ -14,11 +14,6 @@ namespace BLL.Services
             throw new NotImplementedException();
         }
 
-        public void DeleteAdress(int zipCode)
-        {
-            throw new NotImplementedException();
-        }
-
         public void GetAdressByZipCode(int zipCode)
         {
             throw new NotImplementedException();
@@ -29,12 +24,7 @@ namespace BLL.Services
             throw new NotImplementedException();
         }
 
-        public void GetCustomerAdress(ICustomerModel customer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateAdress(IAdressModel adress)
+        public IAdressModel GetCustomerAdress()
         {
             throw new NotImplementedException();
         }
