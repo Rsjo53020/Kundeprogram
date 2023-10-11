@@ -31,43 +31,10 @@ namespace RePo.MockRePo
             _customers.Add(new ModelsRePo.Customer() { FirstName = "Alex", LastName = "Handsome", Email = "AH@ucl.dk", Phonenumber = "30203040", Id = 3 });
         }
 
-
-
-
         /// <summary>
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-
-
-        /// <summary>
-        /// C(R)UD
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
-
-
-        /// <summary>
-        /// C(R)UD
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
-
-
-        /// <summary>
-        /// CR(U)D
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
-
-
-        /// <summary>
-        /// CRU(D)
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
-
-
         public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
         {
             ModelsRePo.Customer customer = new ModelsRePo.Customer();
@@ -80,6 +47,11 @@ namespace RePo.MockRePo
             return customer;
         }
 
+        /// <summary>
+        /// CRU(D)
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public bool DeleteCustomer(int ID)
         {
             try
@@ -100,17 +72,32 @@ namespace RePo.MockRePo
             }
         }
 
+        /// <summary>
+        /// C(R)UD
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public List<ICustomerModel> GetAllCustomers()
         {
             return _customers;
 
         }
 
+        /// <summary>
+        /// C(R)UD
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public ICustomerModel GetCustomerById(int ID)
         {
             return _customers.FirstOrDefault(x => x.Id == ID);
         }
 
+        /// <summary>
+        /// CR(U)D
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public bool UpdateCustomer(int ID, string firstname, string lastname, string phonenumber, string mail)
         {
             try
