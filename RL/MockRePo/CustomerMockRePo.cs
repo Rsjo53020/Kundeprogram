@@ -44,7 +44,7 @@ namespace RePo.MockRePo
             customer.Phonenumber = phonenumber;
             customer.Id = _customers.Count + 1;
             _customers.Add(customer);
-            return customer;
+            return true;
         }
 
         /// <summary>
