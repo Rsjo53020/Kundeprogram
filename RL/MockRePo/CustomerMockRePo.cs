@@ -35,7 +35,7 @@ namespace RePo.MockRePo
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public ICustomerModel CreateCustomer(string firstname, string lastname, string phonenumber, string email)
+        public bool CreateCustomer(string firstname, string lastname, string phonenumber, string email)
         {
             ModelsRePo.Customer customer = new ModelsRePo.Customer();
             customer.FirstName = firstname;
@@ -44,7 +44,7 @@ namespace RePo.MockRePo
             customer.Phonenumber = phonenumber;
             customer.Id = _customers.Count + 1;
             _customers.Add(customer);
-            return customer;
+            return true;
         }
 
         /// <summary>
