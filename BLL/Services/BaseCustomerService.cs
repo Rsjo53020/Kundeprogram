@@ -16,7 +16,6 @@ namespace BLL.Services
         public BaseCustomerService(ABS.Interfaces.RePo.ICustomerRePo customerRePo)
         {
             _customerRePo = customerRePo;
-
         }
 
 
