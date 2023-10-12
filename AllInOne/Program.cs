@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RePo.MockRePo;
 using System;
+using System.Configuration;
 
 namespace AllInOne
 {
@@ -19,7 +20,6 @@ namespace AllInOne
         static void Main()
         {
 
-
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
@@ -28,6 +28,8 @@ namespace AllInOne
             ServiceProvider = host.Services;
 
             Application.Run(ServiceProvider.GetRequiredService<Form1>());
+
+            
         }
 
 
