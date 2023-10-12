@@ -15,6 +15,7 @@ namespace RePo.MockRePo
     public class CustomerMockRePo : ABS.Interfaces.RePo.ICustomerRePo
 
     {
+        //Data Source=mssql12.unoeuro.com;Initial Catalog=aleeex_dk_db_database;Persist Security Info=True;User ID=aleeex_dk;Password=Ghtbd2R6wkxa3Efmycg9;
         private readonly List<ABS.Interfaces.Models.ICustomerModel> _customers;
         public CustomerMockRePo()
         {
