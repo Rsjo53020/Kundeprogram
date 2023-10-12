@@ -12,6 +12,8 @@ namespace UnitTest
             //Arrange
             ABS.Interfaces.RePo.ICustomerRePo CustRepo = new RePo.MockRePo.CustomerMockRePo();
             ABS.Interfaces.Services.ICustomerService customerService = new BLL.Services.PrivatCustomerService(CustRepo);
+            List<BLL.Models.CustomerModel> list = new List<BLL.Models.CustomerModel>();
+            list.Add()
 
             //Act
             var result = customerService.AddCustomer("Test", "Test", "Test", "Test");
@@ -20,6 +22,7 @@ namespace UnitTest
             var lastCustomer = CustomerList.LastOrDefault();
 
             //Assert
+            Assert.IsTrue(numbersaOfcustomer == list.Count)
             Assert.AreSame(lastCustomer.FirstName, "Test");
         }
 
