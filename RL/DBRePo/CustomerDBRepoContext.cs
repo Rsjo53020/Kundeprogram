@@ -24,6 +24,6 @@ namespace RePo.DBRePo
 
         //add-migration sigendeting
 
-        //update-databasen
+        //update-database
     }
 }
