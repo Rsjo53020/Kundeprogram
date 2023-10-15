@@ -40,7 +40,7 @@ namespace AllInOne
                 .ConfigureServices((context, services) =>
                 {
                     services.AddTransient<ABS.Interfaces.Services.ICustomerService,BLL.Services.PrivatCustomerService>(); // Replace with actual implementation
-                    services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.MockRePo.CustomerMockRePo>();
+                    services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.DBRePo.SqlRePo>();
                     services.AddTransient<ABS.Interfaces.Models.IAdressModel, RePo.ModelsRePo.Adress>();
                     services.AddTransient<ABS.Interfaces.Models.ICustomerModel, RePo.ModelsRePo.Customer>();
                     services.AddTransient<Form1>();

@@ -20,6 +20,7 @@ namespace RePo.DBRePo
             using(CustomerDBRepoContext context = new CustomerDBRepoContext())
             {
                 context.Add(customer);
+                context.SaveChanges();
                 return true;
             }
         }
