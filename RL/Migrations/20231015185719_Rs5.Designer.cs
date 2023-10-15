@@ -11,8 +11,8 @@ using RePo.DBRePo;
 namespace RePo.Migrations
 {
     [DbContext(typeof(CustomerDBRepoContext))]
-    [Migration("20231015161217_FirstContext")]
-    partial class FirstContext
+    [Migration("20231015185719_Rs5")]
+    partial class Rs5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

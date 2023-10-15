@@ -5,7 +5,7 @@
 namespace RePo.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstContext : Migration
+    public partial class Rs5 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
