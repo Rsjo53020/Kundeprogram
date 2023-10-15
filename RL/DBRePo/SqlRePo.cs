@@ -26,14 +26,15 @@ namespace RePo.DBRePo
 
         public bool DeleteCustomer(int Id)
         {
-            //using(CustomerDBRepoContext context = new CustomerDBRepoContext())
-            //{
-            //    var customerToRemove = context.Customers.Where(x => x.Id == Id);
-            //    if(customerToRemove != null)
-            //    {
-
-            //    }
-            //}
+            using (CustomerDBRepoContext context = new CustomerDBRepoContext())
+            {
+                var customerToRemove = context.Customers.FirstOrDefault(x => x.Id == Id);
+                if (customerToRemove != null)
+                {
+                    context.Customers.Remove(customerToRemove);
+                    context.SaveChanges();
+                }
+            }
             return true;
         }
 
@@ -55,7 +56,19 @@ namespace RePo.DBRePo
 
         public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail)
         {
-            throw new NotImplementedException();
+            using (CustomerDBRepoContext context = new CustomerDBRepoContext())
+            {
+                var customerToUpdate = context.Customers.FirstOrDefault(x => x.Id == id);
+                if (customerToUpdate != null)
+                {
+                    customerToUpdate.FirstName = firstname;
+                    customerToUpdate.LastName = lastname;
+                    customerToUpdate.Phonenumber = phonenumber;
+                    customerToUpdate.Email = mail;
+                    context.SaveChanges();
+                }
+            }
+            return true;
         }
     }
 }
