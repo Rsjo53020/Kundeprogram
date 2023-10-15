@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ABS.Interfaces.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RePo.ModelsRePo
 {
-    public class Adress : ABS.Interfaces.Models.IAdressModel
+    public class Adress : IAdressModel
     {
         public int Id { get; set; }
         public string Zipcode { get; set; }

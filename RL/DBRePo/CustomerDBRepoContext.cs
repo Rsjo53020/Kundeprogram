@@ -6,23 +6,18 @@ namespace RePo.DBRePo
 
     public class CustomerDBRepoContext : DbContext 
     {
-        string connPath;
         
         public DbSet<ModelsRePo.Customer> Customers { get; set; } = null!;
         public DbSet<ModelsRePo.Adress> Adresses { get; set; } = null!;
 
-        public CustomerDBRepoContext()
-        {
-            connPath = ConfigurationManager.ConnectionStrings["default"].ToString();
-        }
+        //public CustomerDBRepoContext()
+        //{
+        //    connPath = ConfigurationManager.ConnectionStrings["default"].ToString();
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(connPath);
-
-            }
+            optionsBuilder.UseSqlServer("Data Source=mssql12.unoeuro.com;Initial Catalog=aleeex_dk_db_database;Persist Security Info=True;User ID=aleeex_dk;Password=Ghtbd2R6wkxa3Efmycg9;TrustServerCertificate=True;");
         }
 
 
