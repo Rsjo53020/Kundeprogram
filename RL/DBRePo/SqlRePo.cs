@@ -11,15 +11,30 @@ namespace RePo.DBRePo
     {
         public bool CreateCustomer(string firstname, string lastname, string phonenumber, string email)
         {
+            var customer = new ModelsRePo.Customer();
+            customer.FirstName = firstname;
+            customer.LastName = lastname;
+            customer.Phonenumber = phonenumber;
+            customer.Email = email;
+
             using(CustomerDBRepoContext context = new CustomerDBRepoContext())
             {
-                return context;
+                context.Add(customer);
+                return true;
             }
         }
 
         public bool DeleteCustomer(int Id)
         {
-            throw new NotImplementedException();
+            //using(CustomerDBRepoContext context = new CustomerDBRepoContext())
+            //{
+            //    var customerToRemove = context.Customers.Where(x => x.Id == Id);
+            //    if(customerToRemove != null)
+            //    {
+
+            //    }
+            //}
+            return true;
         }
 
         public List<ICustomerModel> GetAllCustomers()
