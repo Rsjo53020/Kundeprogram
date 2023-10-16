@@ -69,7 +69,7 @@ namespace BLL.Services
         /// <param name="Mail"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        public bool AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail)
+        public async Task<bool> AddCustomerAsync(string FirstName, string LastName, string PhoneNr, string Mail)
         {
             // Valider input
             if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName) || string.IsNullOrEmpty(PhoneNr) || string.IsNullOrEmpty(Mail))
@@ -89,7 +89,7 @@ namespace BLL.Services
                 throw new ArgumentException("Ugyldigt e-mail format.");
             }
 
-            return _customerRePo.CreateCustomer(FirstName, LastName, PhoneNr, Mail);
+            return await _customerRePo.CreateCustomerAsync(FirstName, LastName, PhoneNr, Mail);
 
             //Laver metoden om til en string ........
 
@@ -127,14 +127,14 @@ namespace BLL.Services
 
 
 
-        public bool DeleteCustomer(int id)
+        public async Task<bool> DeleteCustomerAsync(int id)
         {
-            return _customerRePo.DeleteCustomer(id);
+            return await _customerRePo.DeleteCustomerAsync(id);
         }
 
-        public List<ICustomerModel> GetAllCustomers()
+        public async Task<List<ICustomerModel>> GetAllCustomersAsync()
         {
-            return _customerRePo.GetAllCustomers();
+            return await _customerRePo.GetAllCustomersAsync();
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace BLL.Services
         /// <param name="id"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        public ICustomerModel GetCustomerById(int id)
+        public async Task<ICustomerModel> GetCustomerByIdAsync(int id)
         {
             // Valider input
 
@@ -153,7 +153,7 @@ namespace BLL.Services
                 throw new ArgumentException("ID skal være større end nul.");
             }
 
-            return _customerRePo.GetCustomerById(id);
+            return await _customerRePo.GetCustomerByIdAsync(id);
         }
         /// <summary>
         /// Update a customer and validate the new inputs
@@ -165,7 +165,7 @@ namespace BLL.Services
         /// <param name="Mail"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        public bool UpdateCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
+        public async Task<bool> UpdateCustomerAsync(int Id, string FirstName, string LastName, string PhoneNr, string Mail)
         {
             // Valider input
             if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName) || string.IsNullOrEmpty(PhoneNr) || string.IsNullOrEmpty(Mail))
@@ -185,7 +185,7 @@ namespace BLL.Services
             }
 
 
-            return _customerRePo.UpdateCustomer(Id, FirstName, LastName, PhoneNr, Mail);
+            return await _customerRePo.UpdateCustomerAsync(Id, FirstName, LastName, PhoneNr, Mail);
         }
     }
 }

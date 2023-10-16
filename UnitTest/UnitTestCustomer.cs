@@ -16,9 +16,9 @@ namespace UnitTest
            
 
             //Act
-            var result = customerService.AddCustomer("Test", "Test", "Test", "Test");
+            var result = customerService.AddCustomerAsync("Test", "Test", "Test", "Test");
 
-            var CustomerList = customerService.GetAllCustomers();
+            var CustomerList = customerService.GetAllCustomersAsync();
             var lastCustomer = CustomerList.LastOrDefault();
 
             //Assert
@@ -36,9 +36,9 @@ namespace UnitTest
 
 
             //Act
-            var result = customerService.DeleteCustomer(TestID);
+            var result = customerService.DeleteCustomerAsync(TestID);
 
-            ABS.Interfaces.Models.ICustomerModel customer = customerService.GetCustomerById(TestID);
+            ABS.Interfaces.Models.ICustomerModel customer = customerService.GetCustomerByIdAsync(TestID);
 
             //Assert
             Assert.IsNull(customer);
@@ -52,7 +52,7 @@ namespace UnitTest
             ABS.Interfaces.Services.ICustomerService customerService = new BLL.Services.PrivatCustomerService(CustRepo);
 
             //Act
-            var List = customerService.GetAllCustomers();
+            var List = customerService.GetAllCustomersAsync();
 
             //Assert
             Assert.IsNotNull(List);
@@ -66,7 +66,7 @@ namespace UnitTest
             ABS.Interfaces.Services.ICustomerService customerService = new BLL.Services.PrivatCustomerService(CustRepo);
 
             //Act
-            var Customer = customerService.GetCustomerById(1);
+            var Customer = customerService.GetCustomerByIdAsync(1);
 
             //Assert
             Assert.IsNotNull(Customer);
@@ -80,12 +80,12 @@ namespace UnitTest
             ABS.Interfaces.Services.ICustomerService customerService = new BLL.Services.PrivatCustomerService(CustRepo);
             
             var selectedID = 1;
-            ABS.Interfaces.Models.ICustomerModel Customer = customerService.GetCustomerById(selectedID);
+            ABS.Interfaces.Models.ICustomerModel Customer = customerService.GetCustomerByIdAsync(selectedID);
             string nameBeforeChange = Customer.FirstName + " " + Customer.LastName;
 
             //Act
-            var updatedCustomer = customerService.UpdateCustomer(selectedID, "test", "test", "test", "test");
-            ABS.Interfaces.Models.ICustomerModel result = customerService.GetCustomerById(selectedID);
+            var updatedCustomer = customerService.UpdateCustomerAsync(selectedID, "test", "test", "test", "test");
+            ABS.Interfaces.Models.ICustomerModel result = customerService.GetCustomerByIdAsync(selectedID);
             string nameAfterChange = result.FirstName + " " + result.LastName;
 
             //Assert

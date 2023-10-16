@@ -9,15 +9,15 @@ namespace ABS.Interfaces.Services
 {
     public interface ICustomerService
     {
-        public List<Models.ICustomerModel> GetAllCustomers();
+        public List<Models.ICustomerModel> GetAllCustomersAsync();
 
-        public Models.ICustomerModel GetCustomerById(int id);
+        public Models.ICustomerModel GetCustomerByIdAsync(int id);
 
-        public bool AddCustomer(string FirstName, string LastName, string PhoneNr, string Mail);
+        public bool AddCustomerAsync(string FirstName, string LastName, string PhoneNr, string Mail);
         
 
-        public bool UpdateCustomer(int Id, string FirstName, string LastName, string PhoneNr, string Mail);
+        public bool UpdateCustomerAsync(int Id, string FirstName, string LastName, string PhoneNr, string Mail);
 
-        public bool DeleteCustomer(int id);
+        public bool DeleteCustomerAsync(int id);
     }
 }

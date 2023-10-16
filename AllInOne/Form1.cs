@@ -91,7 +91,7 @@ namespace AllInOne
             }
 
             // Fortsæt med at tilføje kunden
-            bool success = _customerService.AddCustomer(TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
+            bool success = _customerService.AddCustomerAsync(TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
             // Tjek om oprettelsen var vellykket
             if (success)
             {
@@ -115,7 +115,7 @@ namespace AllInOne
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            _customers = _customerService.GetAllCustomers();
+            _customers = _customerService.GetAllCustomersAsync();
 
             foreach (ICustomerModel customer in _customers)
             {
@@ -168,7 +168,7 @@ namespace AllInOne
             }
 
             // Hent og vis kundeoplysninger
-            var Customer = _customerService.GetCustomerById(id);
+            var Customer = _customerService.GetCustomerByIdAsync(id);
             if (Customer != null)
             {
                 TB_FirstName.Text = Customer.FirstName;
@@ -208,7 +208,7 @@ namespace AllInOne
                 MessageBox.Show("Ugyldigt e-mail format.", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-                _customerService.UpdateCustomer(int.Parse(TB_id.Text), TB_FirstName.Text, TB_LastName.Text, TB_Mail.Text, TB_PhoneNr.Text);
+                _customerService.UpdateCustomerAsync(int.Parse(TB_id.Text), TB_FirstName.Text, TB_LastName.Text, TB_Mail.Text, TB_PhoneNr.Text);
             Form1_Load(sender, e);
         }
 
@@ -217,7 +217,7 @@ namespace AllInOne
             DialogResult answer = MessageBox.Show("Vil du slette Kunde?", "Advarsel", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (answer == DialogResult.Yes)
             {
-                _customerService.DeleteCustomer(int.Parse(TB_id.Text));
+                _customerService.DeleteCustomerAsync(int.Parse(TB_id.Text));
                 Form1_Load(sender, e);
             }
             else
