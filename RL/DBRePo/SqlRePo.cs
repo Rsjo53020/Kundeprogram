@@ -9,7 +9,7 @@ namespace RePo.DBRePo
 {
     public class SqlRePo : ABS.Interfaces.RePo.ICustomerRePo
     {
-        public bool CreateCustomer(string firstname, string lastname, string phonenumber, string email)
+        public async Task<bool> CreateCustomerAsync(string firstname, string lastname, string phonenumber, string email)
         {
             var customer = new ModelsRePo.Customer();
             customer.FirstName = firstname;
@@ -17,7 +17,7 @@ namespace RePo.DBRePo
             customer.Phonenumber = phonenumber;
             customer.Email = email;
 
-            using(CustomerDBRepoContext context = new CustomerDBRepoContext())
+            await using(CustomerDBRepoContext context = new CustomerDBRepoContext())
             {
                 context.Add(customer);
                 context.SaveChanges();
@@ -25,9 +25,9 @@ namespace RePo.DBRePo
             }
         }
 
-        public bool DeleteCustomer(int Id)
+        public async Task<bool> DeleteCustomerAsync(int Id)
         {
-            using (CustomerDBRepoContext context = new CustomerDBRepoContext())
+            await using (CustomerDBRepoContext context = new CustomerDBRepoContext())
             {
                 var customerToRemove = context.Customers.FirstOrDefault(x => x.Id == Id);
                 if (customerToRemove != null)
@@ -39,25 +39,25 @@ namespace RePo.DBRePo
             return true;
         }
 
-        public List<ICustomerModel> GetAllCustomers()
+        public async Task<List<ICustomerModel>> GetAllCustomersAsync()
         {
-            using(CustomerDBRepoContext context = new CustomerDBRepoContext()) 
+            await using(CustomerDBRepoContext context = new CustomerDBRepoContext()) 
             {
                 return context.Customers.ToList<ICustomerModel>();
             }
         }
 
-        public ICustomerModel GetCustomerById(int ID)
+        public async Task<ICustomerModel> GetCustomerByIdAsync(int ID)
         {
-            using(CustomerDBRepoContext context = new CustomerDBRepoContext())
+            await using(CustomerDBRepoContext context = new CustomerDBRepoContext())
             {
                 return context.Customers.Where(x => x.Id == ID).FirstOrDefault();
             }
         }
 
-        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail)
+        public async Task<bool> UpdateCustomerAsync(int id, string firstname, string lastname, string phonenumber, string mail)
         {
-            using (CustomerDBRepoContext context = new CustomerDBRepoContext())
+            await using (CustomerDBRepoContext context = new CustomerDBRepoContext())
             {
                 var customerToUpdate = context.Customers.FirstOrDefault(x => x.Id == id);
                 if (customerToUpdate != null)

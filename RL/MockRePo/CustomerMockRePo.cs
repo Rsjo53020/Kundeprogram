@@ -36,7 +36,7 @@ namespace RePo.MockRePo
         /// (C)RUD
         /// </summary>
         /// <param name="customer"></param>
-        public bool CreateCustomer(string firstname, string lastname, string phonenumber, string email)
+        public async Task<bool> CreateCustomerAsync(string firstname, string lastname, string phonenumber, string email)
         {
             ModelsRePo.Customer customer = new ModelsRePo.Customer();
             customer.FirstName = firstname;
@@ -53,7 +53,7 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public bool DeleteCustomer(int ID)
+        public async Task<bool> DeleteCustomerAsync(int ID)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public List<ICustomerModel> GetAllCustomers()
+        public async Task<List<ICustomerModel>> GetAllCustomersAsync()
         {
             return _customers;
 
@@ -89,7 +89,7 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public ICustomerModel GetCustomerById(int ID)
+        public async Task<ICustomerModel> GetCustomerByIdAsync(int ID)
         {
             return _customers.FirstOrDefault(x => x.Id == ID);
         }
@@ -99,7 +99,7 @@ namespace RePo.MockRePo
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public bool UpdateCustomer(int ID, string firstname, string lastname, string phonenumber, string mail)
+        public async Task<bool> UpdateCustomerAsync(int ID, string firstname, string lastname, string phonenumber, string mail)
         {
             try
             {

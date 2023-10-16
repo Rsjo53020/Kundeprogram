@@ -12,17 +12,17 @@ namespace ABS.Interfaces.RePo
     {
 
 
-        public bool CreateCustomer(string firstname, string lastname, string phonenumber, string email);
+        public  Task<bool> CreateCustomerAsync(string firstname, string lastname, string phonenumber, string email);
 
 
-        public Models.ICustomerModel GetCustomerById(int ID);
+        public Task<Models.ICustomerModel> GetCustomerByIdAsync(int ID);
 
-        public List<Models.ICustomerModel> GetAllCustomers();
-
-
-        public bool UpdateCustomer(int id, string firstname, string lastname, string phonenumber, string mail);
+        public Task<List<Models.ICustomerModel>> GetAllCustomersAsync();
 
 
-        public bool DeleteCustomer(int Id);
+        public Task<bool> UpdateCustomerAsync(int id, string firstname, string lastname, string phonenumber, string mail);
+
+
+        public Task<bool> DeleteCustomerAsync(int Id);
     }
 }
