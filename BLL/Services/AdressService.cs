@@ -9,22 +9,22 @@ namespace BLL.Services
 {
     public class AdressService : ABS.Interfaces.Services.IAdressService
     {
-        public void AddAdress(IAdressModel adress)
+        public void AddAdressAsync(IAdressModel adress)
         {
             throw new NotImplementedException();
         }
 
-        public void GetAdressByZipCode(int zipCode)
+        public void GetAdressByZipCodeAsync(int zipCode)
         {
             throw new NotImplementedException();
         }
 
-        public List<IAdressModel> GetAllAdresses()
+        public Task<List<IAdressModel>> GetAllAdressesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public IAdressModel GetCustomerAdress()
+        public Task<IAdressModel> GetCustomerAdressAsync()
         {
             throw new NotImplementedException();
         }

@@ -9,10 +9,10 @@ namespace ABS.Interfaces.Services
 {
     public interface IAdressService
     {
-        public List<IAdressModel> GetAllAdresses();
-        public Models.IAdressModel GetCustomerAdress();
-        public void GetAdressByZipCode(int zipCode);
-        public void AddAdress(IAdressModel adress);
+        public Task<List<IAdressModel>> GetAllAdressesAsync();
+        public Task<Models.IAdressModel> GetCustomerAdressAsync();
+        public void GetAdressByZipCodeAsync(int zipCode);
+        public void AddAdressAsync(IAdressModel adress);
 
     }
 }
