@@ -67,7 +67,7 @@ namespace AllInOne
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BTN_AddCustomer_Click(object sender, EventArgs e)
+        private async void BTN_AddCustomer_Click(object sender, EventArgs e)
         {
             // Valider input
             if (string.IsNullOrEmpty(TB_FirstName.Text) || string.IsNullOrEmpty(TB_LastName.Text) || string.IsNullOrEmpty(TB_PhoneNr.Text) || string.IsNullOrEmpty(TB_Mail.Text))
@@ -91,7 +91,7 @@ namespace AllInOne
             }
 
             // Fortsæt med at tilføje kunden
-            bool success = _customerService.AddCustomerAsync(TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
+            bool success = await _customerService.AddCustomerAsync(TB_FirstName.Text, TB_LastName.Text, TB_PhoneNr.Text, TB_Mail.Text);
             // Tjek om oprettelsen var vellykket
             if (success)
             {
@@ -112,10 +112,10 @@ namespace AllInOne
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
 
-            _customers = _customerService.GetAllCustomersAsync();
+            _customers = await _customerService.GetAllCustomersAsync();
 
             foreach (ICustomerModel customer in _customers)
             {
@@ -157,7 +157,7 @@ namespace AllInOne
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BTN_ShowOneCustomer_Click(object sender, EventArgs e)
+        private async void BTN_ShowOneCustomer_Click(object sender, EventArgs e)
         {
             // Valider ID
             if (!int.TryParse(TB_id.Text, out int id) || id <= 0)
@@ -168,7 +168,7 @@ namespace AllInOne
             }
 
             // Hent og vis kundeoplysninger
-            var Customer = _customerService.GetCustomerByIdAsync(id);
+            var Customer = await _customerService.GetCustomerByIdAsync(id);
             if (Customer != null)
             {
                 TB_FirstName.Text = Customer.FirstName;
