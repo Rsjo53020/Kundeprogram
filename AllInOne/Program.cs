@@ -1,6 +1,7 @@
 using ABS.Interfaces.Services;
 using BLL.Services;
 using FizzWare.NBuilder;
+using GUI;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RePo.MockRePo;
@@ -24,12 +25,15 @@ namespace AllInOne
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            Application.Run(new login());
+
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<Form1>());
+            Application.Run(ServiceProvider.GetRequiredService<Form1>());   
+            //  Application.Run(ServiceProvider.GetRequiredService<Form1>();
 
-            
+
         }
 
 
@@ -39,11 +43,12 @@ namespace AllInOne
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddTransient<ABS.Interfaces.Services.ICustomerService,BLL.Services.PrivatCustomerService>(); // Replace with actual implementation
+                    services.AddTransient<ABS.Interfaces.Services.ICustomerService, BLL.Services.PrivatCustomerService>(); // Replace with actual implementation
                     services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.DBRePo.SqlRePo>();
                     services.AddTransient<ABS.Interfaces.Models.IAdressModel, RePo.ModelsRePo.Adress>();
                     services.AddTransient<ABS.Interfaces.Models.ICustomerModel, RePo.ModelsRePo.Customer>();
                     services.AddTransient<Form1>();
+
                 });
         }
     }

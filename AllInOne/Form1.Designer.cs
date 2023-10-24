@@ -60,10 +60,10 @@
             // 
             // BTN_AddCustomer
             // 
-            BTN_AddCustomer.Location = new Point(47, 357);
-            BTN_AddCustomer.Margin = new Padding(2, 2, 2, 2);
+            BTN_AddCustomer.Location = new Point(33, 214);
+            BTN_AddCustomer.Margin = new Padding(1, 1, 1, 1);
             BTN_AddCustomer.Name = "BTN_AddCustomer";
-            BTN_AddCustomer.Size = new Size(176, 45);
+            BTN_AddCustomer.Size = new Size(123, 27);
             BTN_AddCustomer.TabIndex = 0;
             BTN_AddCustomer.Text = "Tilføje Kunde";
             BTN_AddCustomer.UseVisualStyleBackColor = true;
@@ -71,10 +71,10 @@
             // 
             // BTN_ShowOneCustomer
             // 
-            BTN_ShowOneCustomer.Location = new Point(248, 357);
-            BTN_ShowOneCustomer.Margin = new Padding(2, 2, 2, 2);
+            BTN_ShowOneCustomer.Location = new Point(174, 214);
+            BTN_ShowOneCustomer.Margin = new Padding(1, 1, 1, 1);
             BTN_ShowOneCustomer.Name = "BTN_ShowOneCustomer";
-            BTN_ShowOneCustomer.Size = new Size(176, 45);
+            BTN_ShowOneCustomer.Size = new Size(123, 27);
             BTN_ShowOneCustomer.TabIndex = 1;
             BTN_ShowOneCustomer.Text = "Vis Kunde";
             BTN_ShowOneCustomer.UseVisualStyleBackColor = true;
@@ -82,10 +82,10 @@
             // 
             // BTN_ShowAllCustomer
             // 
-            BTN_ShowAllCustomer.Location = new Point(47, 429);
-            BTN_ShowAllCustomer.Margin = new Padding(2, 2, 2, 2);
+            BTN_ShowAllCustomer.Location = new Point(33, 257);
+            BTN_ShowAllCustomer.Margin = new Padding(1, 1, 1, 1);
             BTN_ShowAllCustomer.Name = "BTN_ShowAllCustomer";
-            BTN_ShowAllCustomer.Size = new Size(176, 45);
+            BTN_ShowAllCustomer.Size = new Size(123, 27);
             BTN_ShowAllCustomer.TabIndex = 2;
             BTN_ShowAllCustomer.Text = "Vis Alle Kunder";
             BTN_ShowAllCustomer.UseVisualStyleBackColor = true;
@@ -93,10 +93,10 @@
             // 
             // BTN_UpdateCustome
             // 
-            BTN_UpdateCustome.Location = new Point(248, 429);
-            BTN_UpdateCustome.Margin = new Padding(2, 2, 2, 2);
+            BTN_UpdateCustome.Location = new Point(174, 257);
+            BTN_UpdateCustome.Margin = new Padding(1, 1, 1, 1);
             BTN_UpdateCustome.Name = "BTN_UpdateCustome";
-            BTN_UpdateCustome.Size = new Size(176, 45);
+            BTN_UpdateCustome.Size = new Size(123, 27);
             BTN_UpdateCustome.TabIndex = 3;
             BTN_UpdateCustome.Text = "Opdater Kunde";
             BTN_UpdateCustome.UseVisualStyleBackColor = true;
@@ -104,10 +104,10 @@
             // 
             // BTN_DeletedCustome
             // 
-            BTN_DeletedCustome.Location = new Point(248, 505);
-            BTN_DeletedCustome.Margin = new Padding(2, 2, 2, 2);
+            BTN_DeletedCustome.Location = new Point(174, 303);
+            BTN_DeletedCustome.Margin = new Padding(1, 1, 1, 1);
             BTN_DeletedCustome.Name = "BTN_DeletedCustome";
-            BTN_DeletedCustome.Size = new Size(176, 45);
+            BTN_DeletedCustome.Size = new Size(123, 27);
             BTN_DeletedCustome.TabIndex = 4;
             BTN_DeletedCustome.Text = "Slet Kunde";
             BTN_DeletedCustome.UseVisualStyleBackColor = true;
@@ -116,112 +116,112 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 47);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(33, 28);
+            label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
-            label1.Size = new Size(38, 25);
+            label1.Size = new Size(24, 15);
             label1.TabIndex = 5;
             label1.Text = "ID.:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(47, 99);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(33, 59);
+            label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
-            label2.Size = new Size(97, 25);
+            label2.Size = new Size(65, 15);
             label2.TabIndex = 6;
             label2.Text = "Telefon nr.:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(47, 150);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(33, 90);
+            label3.Margin = new Padding(1, 0, 1, 0);
             label3.Name = "label3";
-            label3.Size = new Size(80, 25);
+            label3.Size = new Size(53, 15);
             label3.TabIndex = 7;
             label3.Text = "Fornavn:";
             // 
             // TB_id
             // 
-            TB_id.Location = new Point(199, 47);
-            TB_id.Margin = new Padding(2, 2, 2, 2);
+            TB_id.Location = new Point(139, 28);
+            TB_id.Margin = new Padding(1, 1, 1, 1);
             TB_id.Name = "TB_id";
-            TB_id.Size = new Size(226, 31);
+            TB_id.Size = new Size(159, 23);
             TB_id.TabIndex = 8;
             // 
             // TB_PhoneNr
             // 
-            TB_PhoneNr.Location = new Point(199, 94);
-            TB_PhoneNr.Margin = new Padding(2, 2, 2, 2);
+            TB_PhoneNr.Location = new Point(139, 56);
+            TB_PhoneNr.Margin = new Padding(1, 1, 1, 1);
             TB_PhoneNr.Name = "TB_PhoneNr";
-            TB_PhoneNr.Size = new Size(226, 31);
+            TB_PhoneNr.Size = new Size(159, 23);
             TB_PhoneNr.TabIndex = 9;
             // 
             // TB_FirstName
             // 
-            TB_FirstName.Location = new Point(199, 145);
-            TB_FirstName.Margin = new Padding(2, 2, 2, 2);
+            TB_FirstName.Location = new Point(139, 87);
+            TB_FirstName.Margin = new Padding(1, 1, 1, 1);
             TB_FirstName.Name = "TB_FirstName";
-            TB_FirstName.Size = new Size(226, 31);
+            TB_FirstName.Size = new Size(159, 23);
             TB_FirstName.TabIndex = 10;
             // 
             // LB_INFO
             // 
             LB_INFO.FormattingEnabled = true;
-            LB_INFO.ItemHeight = 25;
-            LB_INFO.Location = new Point(617, 45);
-            LB_INFO.Margin = new Padding(2, 2, 2, 2);
+            LB_INFO.ItemHeight = 15;
+            LB_INFO.Location = new Point(432, 27);
+            LB_INFO.Margin = new Padding(1, 1, 1, 1);
             LB_INFO.Name = "LB_INFO";
-            LB_INFO.Size = new Size(895, 104);
+            LB_INFO.Size = new Size(628, 64);
             LB_INFO.TabIndex = 11;
             LB_INFO.SelectedIndexChanged += LB_INFO_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(514, 47);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(360, 28);
+            label4.Margin = new Padding(1, 0, 1, 0);
             label4.Name = "label4";
-            label4.Size = new Size(57, 25);
+            label4.Size = new Size(37, 15);
             label4.TabIndex = 12;
             label4.Text = "INFO:";
             // 
             // TB_LastName
             // 
-            TB_LastName.Location = new Point(199, 199);
-            TB_LastName.Margin = new Padding(2, 2, 2, 2);
+            TB_LastName.Location = new Point(139, 119);
+            TB_LastName.Margin = new Padding(1, 1, 1, 1);
             TB_LastName.Name = "TB_LastName";
-            TB_LastName.Size = new Size(226, 31);
+            TB_LastName.Size = new Size(159, 23);
             TB_LastName.TabIndex = 14;
             TB_LastName.TextChanged += textBox1_TextChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(47, 205);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(33, 123);
+            label5.Margin = new Padding(1, 0, 1, 0);
             label5.Name = "label5";
-            label5.Size = new Size(90, 25);
+            label5.Size = new Size(60, 15);
             label5.TabIndex = 13;
             label5.Text = "Efternavn:";
             // 
             // TB_Mail
             // 
-            TB_Mail.Location = new Point(199, 255);
-            TB_Mail.Margin = new Padding(2, 2, 2, 2);
+            TB_Mail.Location = new Point(139, 153);
+            TB_Mail.Margin = new Padding(1, 1, 1, 1);
             TB_Mail.Name = "TB_Mail";
-            TB_Mail.Size = new Size(226, 31);
+            TB_Mail.Size = new Size(159, 23);
             TB_Mail.TabIndex = 16;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(47, 261);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(33, 157);
+            label6.Margin = new Padding(1, 0, 1, 0);
             label6.Name = "label6";
-            label6.Size = new Size(49, 25);
+            label6.Size = new Size(33, 15);
             label6.TabIndex = 15;
             label6.Text = "Mail:";
             // 
@@ -233,13 +233,13 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, phonenumberDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, adressDataGridViewTextBoxColumn });
             dataGridView1.DataSource = customerBindingSource;
-            dataGridView1.Location = new Point(475, 167);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(332, 101);
+            dataGridView1.Margin = new Padding(1, 1, 1, 1);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.RowTemplate.Height = 41;
-            dataGridView1.Size = new Size(1035, 532);
+            dataGridView1.Size = new Size(724, 319);
             dataGridView1.TabIndex = 17;
             // 
             // idDataGridViewTextBoxColumn
@@ -302,9 +302,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1480, 709);
+            ClientSize = new Size(1036, 425);
             Controls.Add(dataGridView1);
             Controls.Add(TB_Mail);
             Controls.Add(label6);
@@ -323,7 +323,7 @@
             Controls.Add(BTN_ShowAllCustomer);
             Controls.Add(BTN_ShowOneCustomer);
             Controls.Add(BTN_AddCustomer);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(1, 1, 1, 1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
