@@ -25,15 +25,12 @@ namespace AllInOne
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new login());
-
+            
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
-
-            Application.Run(ServiceProvider.GetRequiredService<Form1>());   
-            //  Application.Run(ServiceProvider.GetRequiredService<Form1>();
-
-
+            var loginForm = ServiceProvider.GetRequiredService<login>();
+            loginForm.Show();
+            Application.Run();
         }
 
 
@@ -47,8 +44,9 @@ namespace AllInOne
                     services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.DBRePo.SqlRePo>();
                     services.AddTransient<ABS.Interfaces.Models.IAdressModel, RePo.ModelsRePo.Adress>();
                     services.AddTransient<ABS.Interfaces.Models.ICustomerModel, RePo.ModelsRePo.Customer>();
-                    services.AddTransient<Form1>();
-
+                    //services.AddTransient<Form1>(provider => new Form1(provider.GetRequiredService<ABS.Interfaces.Services.ICustomerService>()));
+                    //services.AddTransient<Customer>(provider => new Customer(provider.GetRequiredService<ABS.Interfaces.Services.ICustomerService>()));
+                    services.AddTransient<login>();
                 });
         }
     }

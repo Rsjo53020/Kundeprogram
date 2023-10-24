@@ -25,15 +25,14 @@ namespace GUI
 
         private void bt_LogIn_Click(object sender, EventArgs e)
         {
+            
             if (tb_UserName.Text == "Demo" && tb_password.Text == "Demo123")
             {
                 var host = CreateHostBuilder().Build();
                 ServiceProvider = host.Services;
-
-                Application.Run(ServiceProvider.GetRequiredService<Form1>());
-
-                this.Hide(); // Hide the login form
-
+                var form1 = ServiceProvider.GetRequiredService<GUI.Customer>();
+                form1.Show();
+                this.Hide();
             }
 
             else
@@ -42,7 +41,6 @@ namespace GUI
                 tb_UserName.Clear();
                 tb_password.Clear();
                 tb_UserName.Focus();
-
             }
         }
 
@@ -70,6 +68,8 @@ namespace GUI
                     services.AddTransient<ABS.Interfaces.RePo.ICustomerRePo, RePo.DBRePo.SqlRePo>();
                     services.AddTransient<ABS.Interfaces.Models.IAdressModel, RePo.ModelsRePo.Adress>();
                     services.AddTransient<ABS.Interfaces.Models.ICustomerModel, RePo.ModelsRePo.Customer>();
+                    services.AddTransient<Form1>(provider => new Form1(provider.GetRequiredService<ABS.Interfaces.Services.ICustomerService>()));
+                    services.AddTransient<Customer>(provider => new Customer(provider.GetRequiredService<ABS.Interfaces.Services.ICustomerService>()));
                     services.AddTransient<login>();
                 });
         }
