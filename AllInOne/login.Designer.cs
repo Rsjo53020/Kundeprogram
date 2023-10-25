@@ -63,7 +63,7 @@
             label1.ForeColor = Color.DarkOrchid;
             label1.Location = new Point(302, 356);
             label1.Name = "label1";
-            label1.Size = new Size(267, 77);
+            label1.Size = new Size(134, 40);
             label1.TabIndex = 1;
             label1.Text = "LOG IN";
             // 
@@ -92,7 +92,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(587, 820);
             label2.Name = "label2";
-            label2.Size = new Size(173, 36);
+            label2.Size = new Size(87, 18);
             label2.TabIndex = 4;
             label2.Text = "Clear fields";
             label2.Click += label2_Click;
@@ -102,7 +102,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(755, 12);
             label3.Name = "label3";
-            label3.Size = new Size(66, 36);
+            label3.Size = new Size(34, 18);
             label3.TabIndex = 5;
             label3.Text = "Exit";
             label3.Click += label3_Click;
@@ -124,14 +124,14 @@
             // 
             tb_UserName.Location = new Point(170, 540);
             tb_UserName.Name = "tb_UserName";
-            tb_UserName.Size = new Size(590, 44);
+            tb_UserName.Size = new Size(590, 26);
             tb_UserName.TabIndex = 7;
             // 
             // tb_password
             // 
             tb_password.Location = new Point(170, 733);
             tb_password.Name = "tb_password";
-            tb_password.Size = new Size(590, 44);
+            tb_password.Size = new Size(590, 26);
             tb_password.TabIndex = 8;
             // 
             // panel1
@@ -150,10 +150,10 @@
             // 
             // login
             // 
-            AutoScaleDimensions = new SizeF(18F, 36F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(833, 1046);
+            ClientSize = new Size(833, 941);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(tb_password);
