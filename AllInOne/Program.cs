@@ -27,11 +27,10 @@ namespace AllInOne
 
             Application.Run(new login());
 
-            var host = CreateHostBuilder().Build();
-            ServiceProvider = host.Services;
+            //var host = CreateHostBuilder().Build();
+            //ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<Form1>());   
-            //  Application.Run(ServiceProvider.GetRequiredService<Form1>();
+            //Application.Run(ServiceProvider.GetRequiredService<Form1>());
 
 
         }

@@ -16,6 +16,11 @@ namespace GUI
         public static IServiceProvider? ServiceProvider { get; private set; }
         ABS.Interfaces.Services.ICustomerService customerService;
 
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddScoped<Form1>();
+            // andre tjenester
+        }
 
         public login()
         {
