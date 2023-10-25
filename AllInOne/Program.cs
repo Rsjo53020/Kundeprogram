@@ -32,7 +32,7 @@ namespace AllInOne
 
             //Application.Run(ServiceProvider.GetRequiredService<Form1>());
 
-
+            //forsøg1+++++++++++++++++++++++++++++++++
         }
 
 
